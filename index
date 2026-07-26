@@ -381,19 +381,6 @@
                         <h3>String-Mapping: Digital Translation Canvas</h3>
                         <p style="margin-bottom: 0;">Visualizing the analog thread-mapping and petroleum jelly cards collected from the 17 brick kilns. Hover over nodes to view simulated ground metrics.</p>
                     </div>
-                    
-                    <div class="data-canvas-wrapper">
-                        <svg class="svg-canvas" viewBox="0 0 1000 500" preserveAspectRatio="none">
-                            <path d="M 200 150 Q 400 50 600 200 T 800 350" class="string-path" />
-                            <path d="M 200 150 Q 300 300 500 400 T 800 350" class="string-path" />
-                            <path d="M 600 200 L 500 400" class="string-hazard" />
-                        </svg>
-                        <div class="map-node" style="top: 142px; left: 192px;" data-info="Kiln Alpha: Start Point"></div>
-                        <div class="map-node" style="top: 192px; left: 592px; background: var(--accent-red);" data-info="Live Wire Hazard Detected"></div>
-                        <div class="map-node" style="top: 392px; left: 492px;" data-info="High Dust Density (Jelly Card A2)"></div>
-                        <div class="map-node" style="top: 342px; left: 792px;" data-info="Kiln Beta: High Foot Traffic"></div>
-                    </div>
-                </div>
 
                 <!-- MEETING AGENDAS -->
                 <h3 style="margin-top: 5rem; border-bottom: 2px solid var(--border-heavy); padding-bottom: 1rem;">Active Discussions & Next Steps</h3>
@@ -403,8 +390,8 @@
                         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                             <div>
                                 <span class="status-tag tag-execution">Execution Block</span>
-                                <h3>Toolkit Deployment Friction</h3>
-                                <p style="margin: 0; font-size: 0.95rem;">Sonipat, NCR - Raman's Team</p>
+                                <h3>Next Meeting</h3>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
                             </div>
                             <span class="meta-label">Upcoming Zoom</span>
                         </div>
@@ -413,11 +400,10 @@
                             <summary>View Agenda, Outcomes & Tasks</summary>
                             <div class="agenda-content">
                                 <ul>
-                                    <li><strong>Context:</strong> Distributed first batch of petroleum jelly cards to 50 children. Friction in explaining mechanics vs instruction.</li>
-                                    <li><strong>Agenda:</strong> How do we simplify the language to focus purely on visual outcomes?</li>
-                                    <li><strong>Next Steps:</strong> Vivek to adapt the curriculum script by Tuesday. Priya to review environmental factors.</li>
+                                    <li><strong>Context:</strong> </li>
+                                    <li><strong>Agenda:</strong> </li>
+                                    <li><strong>Next Steps:</strong> </li>
                                 </ul>
-                                <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.7rem; margin-top: 1rem;">Link to Zoom Recording</button>
                             </div>
                         </details>
                     </div>
@@ -435,7 +421,7 @@
                         <details>
                             <summary>View Notes</summary>
                             <div class="agenda-content">
-                                <p><strong>Outcome:</strong> Ensuring the children understand the value of avoiding injury not just for health, but for long-term family stability. Kip confirmed 1:10 educator-to-child ratio[cite: 1].</p>
+                                <p><strong>Outcome:</strong> Ensuring the children understand the value of avoiding injury not just for health, but for long-term family stability..</p>
                             </div>
                         </details>
                     </div>
