@@ -271,22 +271,22 @@
                     <div class="resource-card">
                         <span class="status-tag tag-data">Data Architecture</span>
                         <h2>Geographic Info Systems</h2>
-                        <p>Understanding the spatial mapping foundations that allow us to translate analog string-maps into actionable digital vulnerability indexes[cite: 1].</p>
+                        <p>Understanding the spatial mapping foundations that allow us to translate analog string-maps into actionable digital vulnerability indexes.</p>
                     </div>
                     <div class="resource-card">
                         <span class="status-tag tag-ideation">Theoretical Core</span>
                         <h2>What is Mapping?</h2>
-                        <p>Redefining cartography. Mapping is not just geography; it is the documentation of human movement, exposure, and environmental reality[cite: 1].</p>
+                        <p>Redefining cartography. Mapping is not just geography; it is the documentation of human movement, exposure, and environmental reality.</p>
                     </div>
                     <div class="resource-card">
                         <span class="status-tag tag-execution">Field Operations</span>
                         <h2>Need-Based Education</h2>
-                        <p>Education designed for survival. We bypass traditional rote learning to teach practical, immediate risk calculation disguised as play[cite: 1].</p>
+                        <p>Education designed for survival. We bypass traditional rote learning to teach practical, immediate risk calculation disguised as play.</p>
                     </div>
                     <div class="resource-card">
                         <span class="status-tag tag-dark">Algorithm Synthesis</span>
                         <h2>The Vulnerability Index</h2>
-                        <p>The mathematical synthesis of our ground data. How we quantify hazard types against population exposure to rank community risks[cite: 1].</p>
+                        <p>The mathematical synthesis of our ground data. How we quantify hazard types against population exposure to rank community risks.</p>
                     </div>
                 </div>
             </section>
@@ -310,7 +310,7 @@
                         <div class="team-info">
                             <h3>Priya</h3>
                             <span class="meta-label">Explorer | Environmental Lens</span>
-                            <p>Drives the environmental research, curriculum design, and operational toolsets[cite: 1].</p>
+                            <p>Drives the environmental research, curriculum design, and operational toolsets.</p>
                         </div>
                     </div>
 
@@ -322,7 +322,7 @@
                         <div class="team-info">
                             <h3>Vivek</h3>
                             <span class="meta-label">Lead Educator | Capital Lens</span>
-                            <p>Contextualizes the curriculum for ground realities, focusing on the underlying economic mechanics of the sites[cite: 1].</p>
+                            <p>Contextualizes the curriculum for ground realities, focusing on the underlying economic mechanics of the sites.</p>
                         </div>
                     </div>
 
@@ -334,7 +334,7 @@
                         <div class="team-info">
                             <h3>Raman</h3>
                             <span class="meta-label">Community Educator | Ground Operations</span>
-                            <p>Founder of LIFI. Anchors our ground strategy across 17 NCR kilns (Hindi-speaking, ages 8–14) and manages our network of community teachers[cite: 1].</p>
+                            <p>Founder of LIFI. Anchors our ground strategy across 17 NCR kilns (Hindi-speaking, ages 8–14) and manages our network of community teachers.</p>
                         </div>
                     </div>
 
@@ -358,7 +358,7 @@
                         <div class="team-info">
                             <h3>Kip</h3>
                             <span class="meta-label">Program Guide</span>
-                            <p>Steers our overall program navigation, bringing essential energy and strategic warmth to the cohort[cite: 1].</p>
+                            <p>Steers our overall program navigation, bringing essential energy and strategic warmth to the cohort.</p>
                         </div>
                     </div>
                 </div>
@@ -371,7 +371,7 @@
                 <div class="text-center-wrap" style="margin-bottom: 4rem;">
                     <span class="meta-label">Mission Control</span>
                     <h1>Project Hub & Field Logs.</h1>
-                    <p>Live tracking of execution in the Sonipat district[cite: 1], upcoming meeting agendas, and digital data prototypes.</p>
+                    <p>Live tracking of execution in the Sonipat district, upcoming meeting agendas, and digital data prototypes.</p>
                 </div>
                 
                 <!-- STRING MAPPING VISUALIZATION INTERFACE -->
@@ -379,7 +379,7 @@
                     <div style="padding: 2rem; border-bottom: 2px solid var(--border-heavy); background: #FFF;">
                         <span class="status-tag tag-data">Data Prototype</span>
                         <h3>String-Mapping: Digital Translation Canvas</h3>
-                        <p style="margin-bottom: 0;">Visualizing the analog thread-mapping and petroleum jelly cards[cite: 1] collected from the 17 brick kilns[cite: 1]. Hover over nodes to view simulated ground metrics.</p>
+                        <p style="margin-bottom: 0;">Visualizing the analog thread-mapping and petroleum jelly cards collected from the 17 brick kilns. Hover over nodes to view simulated ground metrics.</p>
                     </div>
                     
                     <div class="data-canvas-wrapper">
@@ -404,7 +404,7 @@
                             <div>
                                 <span class="status-tag tag-execution">Execution Block</span>
                                 <h3>Toolkit Deployment Friction</h3>
-                                <p style="margin: 0; font-size: 0.95rem;">Sonipat, NCR - Raman's Team[cite: 1]</p>
+                                <p style="margin: 0; font-size: 0.95rem;">Sonipat, NCR - Raman's Team</p>
                             </div>
                             <span class="meta-label">Upcoming Zoom</span>
                         </div>
@@ -413,7 +413,7 @@
                             <summary>View Agenda, Outcomes & Tasks</summary>
                             <div class="agenda-content">
                                 <ul>
-                                    <li><strong>Context:</strong> Distributed first batch of petroleum jelly cards to 50 children[cite: 1]. Friction in explaining mechanics vs instruction.</li>
+                                    <li><strong>Context:</strong> Distributed first batch of petroleum jelly cards to 50 children. Friction in explaining mechanics vs instruction.</li>
                                     <li><strong>Agenda:</strong> How do we simplify the language to focus purely on visual outcomes?</li>
                                     <li><strong>Next Steps:</strong> Vivek to adapt the curriculum script by Tuesday. Priya to review environmental factors.</li>
                                 </ul>
