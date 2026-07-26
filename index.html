@@ -10,19 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- HIGH-CONTRAST CREATOR DESIGN SYSTEM --- */
+        /* --- RESTORED NAT GEO EDITORIAL SYSTEM + FUNCTIONAL LEDGER --- */
         :root {
             --bg-paper: #FFFFFF;     
-            --ink-main: #111111;     
+            --ink-main: #1C1B1A;     
             --ink-muted: #555555;    
             --natgeo-yellow: #FFCC00;
+            --border-subtle: #E8E5E1;
             --border-heavy: #111111;
-            --border-subtle: #E0E0E0;
-            --accent-blue: #0044FF;
-            --accent-red: #FF3333;
+            --accent-blue: #1A56FF;
+            --accent-red: #E12A1C;
             
             --font-serif: 'Cormorant Garamond', Georgia, serif;
             --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
             
             --easing: 1.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
@@ -32,145 +33,171 @@
             font-family: var(--font-sans);
             color: var(--ink-main);
             background-color: var(--bg-paper);
-            line-height: 1.8;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
         /* TYPOGRAPHY */
-        h1, h2, h3, .serif-text { font-family: var(--font-serif); font-weight: 500; }
-        h1 { font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; }
-        h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin-bottom: 1rem; }
-        h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        p { font-size: 1.1rem; color: var(--ink-muted); margin-bottom: 2rem; font-weight: 400; line-height: 1.7; }
-        .meta-label { font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; color: var(--ink-main); margin-bottom: 1rem; display: block; }
+        h1, h2, h3, .serif-text { font-family: var(--font-serif); font-weight: 400; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+        p { font-size: 1.05rem; color: var(--ink-muted); margin-bottom: 1.5rem; font-weight: 300; }
+        .meta-label { font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--ink-main); margin-bottom: 0.5rem; display: block; }
 
         /* STATUS TAGS */
-        .status-tag { display: inline-block; padding: 0.35rem 0.85rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 4px; margin-bottom: 1rem; border: 1px solid var(--ink-main); }
-        .tag-ideation { background: #E0E7FF; color: #111; } 
-        .tag-execution { background: var(--natgeo-yellow); color: #111; } 
-        .tag-data { background: #DCFCE7; color: #111; } 
-        .tag-blocker { background: #FEE2E2; color: #111; }
-        .tag-dark { background: var(--ink-main); color: var(--bg-paper); }
+        .status-tag { display: inline-block; padding: 0.3rem 0.8rem; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 20px; margin-bottom: 1rem; }
+        .tag-ideation { background: #E6ECFF; color: #002277; } 
+        .tag-execution { background: #FFF9E6; color: #B38F00; } 
+        .tag-data { background: #E6F8ED; color: #007336; } 
+        .tag-blocker { background: #FDEDED; color: #C02418; }
 
         /* LAYOUT & STRUCTURE */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 4vw; }
-        .section-padding { padding: 8rem 0; }
-        .divider { width: 100%; height: 2px; background-color: var(--border-heavy); margin: 5rem 0; }
+        .section-padding { padding: 2rem 0 6rem; }
+        .divider { width: 100%; height: 1px; background-color: var(--border-subtle); margin: 3rem 0; }
         
-        .text-center-wrap { max-width: 800px; margin: 0 auto; text-align: center; }
-        .text-center-wrap p { margin-left: auto; margin-right: auto; }
-        .text-wrap { max-width: 550px; margin: 0 auto; }
+        .text-center-wrap { max-width: 800px; margin: 0 auto 2rem; text-align: center; }
+        .text-center-wrap p { margin-left: auto; margin-right: auto; margin-bottom: 1rem; }
 
         /* IMAGE HANDLING */
-        img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.1); transition: filter 0.5s ease; }
-        .img-wrap { overflow: hidden; background-color: var(--border-subtle); border: 2px solid var(--ink-main); }
-        .img-landscape { aspect-ratio: 16/9; }
-        .img-portrait { aspect-ratio: 3/4; }
+        img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .img-wrap { overflow: hidden; background-color: var(--border-subtle); border-radius: 4px; }
         
         /* NAVIGATION */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
-            padding: 1.5rem 0;
-            border-bottom: 2px solid var(--border-heavy);
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
         }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; }
-        
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
         .brand-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
-        .yellow-border-mark { width: 16px; height: 16px; background-color: var(--natgeo-yellow); border: 2px solid var(--ink-main); }
-        .logo-text { font-family: var(--font-sans); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; color: var(--ink-main); }
+        .yellow-border-mark { width: 14px; height: 18px; border: 2.5px solid var(--natgeo-yellow); }
+        .logo-text { font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; color: var(--ink-main); }
         
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links li { font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em; color: var(--ink-muted); cursor: pointer; transition: color 0.3s ease; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
+        .nav-links li { font-size: 0.75rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.15em; color: var(--ink-muted); cursor: pointer; transition: color 0.3s ease; }
         .nav-links li:hover { color: var(--ink-main); }
-        .nav-links li.active { color: var(--ink-main); text-decoration: underline; text-decoration-color: var(--natgeo-yellow); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+        .nav-links li.active { color: var(--ink-main); font-weight: 600; text-decoration: underline; text-decoration-color: var(--natgeo-yellow); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
         /* SPA CONTROLLER */
-        .view-section { display: none; padding-top: 80px; min-height: 100vh; opacity: 0; }
+        .view-section { display: none; padding-top: 100px; min-height: 100vh; opacity: 0; }
         .view-section.active { display: block; animation: smoothFadeIn var(--easing) forwards; }
-        @keyframes smoothFadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes smoothFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* --- HERO SECTION --- */
-        .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; position: relative; }
-        .hero-title-wrap { max-width: 900px; margin: 0 auto 3rem; text-align: center; z-index: 2; }
-        .hero-image-wrap { width: 100%; height: 55vh; position: relative; border-radius: 0; }
-        .hero-statement { font-family: var(--font-serif); font-size: 1.75rem; font-style: italic; color: var(--ink-main); max-width: 750px; margin: -4rem auto 0; position: relative; z-index: 3; background: var(--bg-paper); padding: 2.5rem; text-align: center; border: 2px solid var(--border-heavy); box-shadow: 8px 8px 0px var(--natgeo-yellow); }
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding-top: 1rem; }
+        .hero-title-wrap { max-width: 900px; margin: 0 auto 2.5rem; text-align: center; z-index: 2; }
+        .hero-image-wrap { width: 100%; height: 50vh; position: relative; }
+        .hero-statement { font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; color: var(--ink-main); max-width: 750px; margin: -3rem auto 6rem; position: relative; z-index: 3; background: var(--bg-paper); padding: 2.5rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-radius: 4px; }
         
-        /* --- DATA CARDS & RESOURCES (BRUTALIST STYLE) --- */
-        .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
-        .data-point { background-color: var(--bg-paper); border: 2px solid var(--border-heavy); border-top: 8px solid var(--natgeo-yellow); padding: 3rem 2rem; text-align: center; box-shadow: 6px 6px 0px var(--ink-main); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .data-point:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0px var(--ink-main); }
-        .data-value { font-family: var(--font-serif); font-weight: 600; font-size: 4rem; line-height: 1; color: var(--ink-main); margin-bottom: 1rem; display: block; }
-        .data-context { font-size: 0.95rem; font-weight: 500; color: var(--ink-muted); }
-
-        /* --- RESOURCE CARDS --- */
-        .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 4rem; }
-        .resource-card { border: 2px solid var(--border-heavy); padding: 3rem; background: var(--bg-paper); box-shadow: 6px 6px 0px var(--border-heavy); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; align-items: flex-start; }
-        .resource-card:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0px var(--border-heavy); }
-        .resource-card h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-        .resource-card p { margin-bottom: 0; }
-
-        /* --- TEAM ROWS (BRUTALIST LIST) --- */
-        .team-list { display: flex; flex-direction: column; gap: 2.5rem; margin-top: 5rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
-        .team-row { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: center; border: 2px solid var(--border-heavy); background: #FAFAFA; padding: 2rem; box-shadow: 6px 6px 0px var(--ink-main); transition: transform 0.2s ease; }
-        .team-row:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0px var(--ink-main); background: var(--bg-paper); }
-        .team-photo { width: 100%; aspect-ratio: 3/4; border: 2px solid var(--border-heavy); overflow: hidden; }
-        .team-photo img { filter: grayscale(100%) contrast(1.2); }
-        .team-row:hover .team-photo img { filter: grayscale(0%) contrast(1.1); }
-        .team-info h3 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 0.5rem; }
-        .team-info .meta-label { color: var(--accent-blue); margin-bottom: 1rem; }
+        /* --- ECONOMICS DATA BLOCK --- */
+        .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .data-point { background-color: #fff; border: 1px solid var(--border-subtle); padding: 3rem 2rem; border-radius: 8px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .data-point:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .data-value { font-family: var(--font-serif); font-size: 3.5rem; line-height: 1; color: var(--ink-main); margin-bottom: 0.5rem; display: block; }
+        .data-context { font-size: 0.95rem; font-weight: 300; color: var(--ink-muted); margin-bottom: 0; }
 
         /* --- EDITORIAL GRIDS --- */
-        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
+        .grid-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; align-items: center; }
+        .img-portrait { aspect-ratio: 4/5; }
+
+        /* --- THE ARCHITECTURE (ELEGANT FLOW) --- */
+        .arch-flow-wrapper { margin-top: 4rem; position: relative; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .arch-flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+        .arch-flow-grid::before { content: ''; position: absolute; top: 2rem; left: 15%; right: 15%; border-top: 1px dashed var(--ink-muted); opacity: 0.3; z-index: 1; }
+        .arch-item { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--bg-paper); padding: 0 1rem; }
+        .arch-phase-num { width: 4rem; height: 4rem; background: var(--bg-paper); border: 1px solid var(--border-subtle); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--ink-main); margin-bottom: 1.25rem; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.3s ease, border-color 0.3s ease; }
+        .arch-item:hover .arch-phase-num { transform: translateY(-5px); border-color: var(--natgeo-yellow); color: var(--ink-main); }
+        .arch-item h3 { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .arch-item p { font-size: 0.95rem; color: var(--ink-muted); margin-bottom: 0; line-height: 1.6; }
+        .arch-equation { margin-top: 1.25rem; padding: 0.6rem 1rem; background: #FAFAFA; border: 1px solid var(--border-subtle); border-radius: 4px; font-family: var(--font-sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--ink-main); display: inline-block; }
+        .arch-equation span.highlight { color: var(--accent-red); }
+
+        /* --- INSPIRATIONS --- */
+        .research-ledger { border: 2px solid var(--border-heavy); box-shadow: 6px 6px 0px var(--ink-main); background: var(--bg-paper); display: flex; flex-direction: column; margin-top: 2rem; }
+        .ledger-row { display: grid; grid-template-columns: 280px 1fr; border-bottom: 2px solid var(--border-heavy); }
+        .ledger-row:last-child { border-bottom: none; }
+        .ledger-meta { padding: 2.5rem 2rem; border-right: 2px solid var(--border-heavy); display: flex; flex-direction: column; justify-content: flex-start; }
         
+        .ledger-meta .status-tag { border: 1px solid var(--border-heavy); border-radius: 0; padding: 0.4rem 0.8rem; font-size: 0.65rem; color: var(--ink-main); width: fit-content; margin-bottom: 1rem; }
+        .ledger-meta h3 { font-family: var(--font-sans); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--ink-main); margin-bottom: 0; }
+        
+        .ledger-content { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+        .ledger-content h2 { font-family: var(--font-serif); font-size: 2rem; color: var(--accent-blue); margin-bottom: 0.75rem; font-weight: 500; }
+        .ledger-content p { font-size: 1.05rem; color: var(--ink-muted); margin-bottom: 1rem; line-height: 1.6; }
+        .ledger-content p:last-child { margin-bottom: 0; }
+
+        /* --- RESOURCES: EXPANDABLE DIGITAL LOCKER --- */
+        .locker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+        .locker-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border-subtle); border-top: 4px solid var(--natgeo-yellow); padding: 2.5rem; border-radius: 8px; transition: box-shadow 0.3s ease; }
+        .locker-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .locker-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .locker-desc { font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; color: var(--ink-muted); }
+        
+        .locker-details { margin-top: auto; }
+        .locker-details summary { display: block; width: 100%; text-align: center; padding: 0.8rem; border: 1px solid var(--ink-main); border-radius: 4px; font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
+        .locker-details summary:hover { background: var(--ink-main); color: var(--bg-paper); }
+        .locker-details summary::-webkit-details-marker { display: none; }
+        .locker-expanded { padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px dashed var(--border-subtle); font-size: 0.9rem; color: var(--ink-muted); }
+        
+        /* Interactive Link Styling for the Resource Image */
+        .resource-link-wrapper { display: block; text-decoration: none; position: relative; }
+        .resource-img-interactive { width: 100%; border-radius: 4px; display: block; border: 1px solid var(--border-subtle); transition: all 0.3s ease; }
+        .resource-link-wrapper:hover .resource-img-interactive { border-color: var(--accent-blue); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .resource-link-label { text-align: center; margin-top: 1rem; padding: 0.6rem; background: #F0F4FF; border-radius: 4px; color: var(--accent-blue); font-family: var(--font-sans); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.3s; }
+        .resource-link-wrapper:hover .resource-link-label { background: var(--accent-blue); color: var(--bg-paper); }
+
+        .file-list { list-style: none; padding: 0; margin-top: 0.5rem; }
+        .file-list li { font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
+        .file-list li::before { content: '↳'; color: var(--accent-blue); font-weight: bold; font-family: var(--font-sans);}
+        .file-list a { color: var(--ink-main); text-decoration: none; transition: color 0.2s; }
+        .file-list a:hover { color: var(--accent-blue); text-decoration: underline; }
+        
+        /* --- TEAM: 3 THEN 2 GRID --- */
+        .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .team-card { width: calc(33.333% - 2rem); min-width: 250px; text-align: center; }
+        .team-avatar { width: 140px; height: 140px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--border-subtle); }
+        .team-avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .team-card:hover .team-avatar img { transform: scale(1.05); }
+        .team-info h3 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+        .team-info .meta-label { margin-bottom: 1rem; display: block; color: var(--natgeo-yellow); }
+        .team-info p { margin-bottom: 0; font-size: 0.95rem; line-height: 1.6; }
+
         /* --- ACCORDION / AGENDA BLOCKS --- */
-        .agenda-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-        .agenda-block { border: 2px solid var(--border-heavy); background: #FAFAFA; padding: 2rem; box-shadow: 4px 4px 0px var(--border-subtle); }
-        details { margin-top: 1.5rem; }
-        summary { font-family: var(--font-sans); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-blue); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; padding-bottom: 1rem; border-bottom: 2px dashed var(--border-subtle); outline: none; }
-        summary::-webkit-details-marker { display: none; }
-        summary::before { content: '+'; font-size: 1.2rem; font-weight: 400; color: var(--ink-main); }
-        details[open] summary::before { content: '−'; }
+        .agenda-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .agenda-block { border: 1px solid var(--border-subtle); background: #fff; padding: 2.5rem; border-radius: 8px; transition: box-shadow 0.3s; }
+        .agenda-block:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .agenda-block h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+        details.agenda-details { margin-top: 1.5rem; }
+        .agenda-details summary { font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-blue); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; padding-bottom: 1rem; border-bottom: 1px dashed var(--border-subtle); outline: none; transition: color 0.2s;}
+        .agenda-details summary:hover { color: var(--ink-main); }
+        .agenda-details summary::-webkit-details-marker { display: none; }
+        .agenda-details summary::before { content: '+'; font-size: 1.2rem; font-weight: 400; color: var(--ink-main); }
+        .agenda-details[open] summary::before { content: '−'; }
         .agenda-content { padding-top: 1.5rem; font-size: 1rem; }
         .agenda-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
         .agenda-content li { margin-bottom: 0.5rem; }
 
-        /* --- VISUAL DATA CANVAS (STRING MAPPING PROTOTYPE) --- */
-        .data-canvas-wrapper { width: 100%; height: 500px; background-color: #FAFAFA; border: 2px solid var(--border-heavy); position: relative; overflow: hidden; margin-top: 2rem; box-shadow: inset 0 0 50px rgba(0,0,0,0.02); background-image: radial-gradient(#d1d1d1 1px, transparent 1px); background-size: 20px 20px; }
-        
-        .map-node { position: absolute; width: 16px; height: 16px; background: var(--natgeo-yellow); border: 2px solid var(--ink-main); border-radius: 50%; z-index: 10; cursor: pointer; transition: transform 0.2s; }
-        .map-node:hover { transform: scale(1.5); }
-        .map-node::after { content: attr(data-info); position: absolute; top: -35px; left: 50%; transform: translateX(-50%); background: var(--ink-main); color: #fff; padding: 4px 10px; font-size: 0.7rem; font-family: var(--font-sans); white-space: nowrap; border-radius: 4px; opacity: 0; transition: opacity 0.2s; pointer-events: none; font-weight: 600; }
-        .map-node:hover::after { opacity: 1; }
-
-        .svg-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .string-path { fill: none; stroke: var(--ink-main); stroke-width: 2; stroke-dasharray: 6; animation: flow 20s linear infinite; }
-        .string-hazard { stroke: var(--accent-red); stroke-width: 3; stroke-dasharray: 4; animation: flowReverse 10s linear infinite; }
-        
-        @keyframes flow { to { stroke-dashoffset: 1000; } }
-        @keyframes flowReverse { to { stroke-dashoffset: -1000; } }
-
-        /* BUTTONS */
-        .btn { display: inline-block; padding: 1rem 2.5rem; background: var(--bg-paper); color: var(--ink-main); border: 2px solid var(--border-heavy); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; cursor: pointer; transition: all 0.2s ease; box-shadow: 4px 4px 0px var(--ink-main); }
-        .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--ink-main); background: var(--natgeo-yellow); }
-
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .grid-split { grid-template-columns: 1fr; flex-direction: column; }
-            .data-grid, .resource-grid { grid-template-columns: 1fr; }
+            .data-grid, .locker-grid, .grid-split, .arch-flow-grid { grid-template-columns: 1fr; }
+            .arch-flow-grid { gap: 3rem; }
+            .arch-flow-grid::before { display: none; }
+            .grid-split { gap: 2.5rem; }
             .nav-links { display: none; } 
             h1 { font-size: 2.8rem; }
-            .hero-statement { margin: -2rem 1rem 0; width: calc(100% - 2rem); padding: 1.5rem; }
+            .ledger-row { grid-template-columns: 1fr; }
+            .ledger-meta { border-right: none; border-bottom: 2px solid var(--border-heavy); padding: 2rem; }
+            .hero-statement { width: calc(100% - 2rem); margin-left: 1rem; margin-right: 1rem; padding: 1.5rem; margin-bottom: 3rem;}
         }
         @media (max-width: 768px) {
-            .team-row { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; padding: 2rem 1rem; }
-            .team-photo { max-width: 240px; margin: 0 auto; }
-            .team-info .meta-label { justify-content: center; }
-            .resource-card { align-items: center; text-align: center; }
+            .team-card { width: 100%; max-width: 300px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -185,9 +212,10 @@
             <nav>
                 <ul class="nav-links">
                     <li class="nav-item active" data-target="home">Overview</li>
+                    <li class="nav-item" data-target="inspirations">Inspirations</li>
                     <li class="nav-item" data-target="resources">Resources</li>
                     <li class="nav-item" data-target="team">Team</li>
-                    <li class="nav-item" data-target="fieldlog">Project Hub & Logs</li>
+                    <li class="nav-item" data-target="fieldlog">Project Hub</li>
                 </ul>
             </nav>
         </div>
@@ -196,65 +224,152 @@
     <main>
         <!-- VIEW: OVERVIEW -->
         <article id="home" class="view-section active">
-            <!-- Hero Section[cite: 1] -->
             <section class="hero container reveal">
                 <div class="hero-title-wrap">
                     <span class="meta-label">A Nat Geo Project</span>
-                    <h1>We cannot fix what<br>we cannot see.</h1>
+                    <h1>We cannot fix what we cannot see.</h1>
                 </div>
-                
                 <div class="hero-image-wrap img-wrap">
-                    <img src="live wire.png" alt="Stark landscape">
+                    <img src="https://images.unsplash.com/photo-1542272201-b1ca555f8505?q=80&w=1200&auto=format&fit=crop" alt="Stark landscape">
                 </div>
-                
                 <div class="hero-statement">
-                    Every monsoon, the ground beneath India’s most vulnerable communities becomes a minefield. Unmapped hazards claim thousands of lives. The system is blind. We are building the eyes.
+                    Every monsoon, the ground beneath India’s most vulnerable communities becomes a minefield. Hidden hazards claim thousands of lives. The current system is blind to this. We are building a way to see it.
                 </div>
             </section>
 
-            <!-- Economic Framework[cite: 1] -->
-            <section class="section-padding container">
-                <div class="reveal">
-                    <div class="text-center-wrap">
-                        <span class="meta-label">The Economics</span>
-                        <h2>The Mathematics of Negligence.</h2>
-                        <p>This is not just a humanitarian crisis; it is a macro-economic leak. Over <strong>40% of fatalities</strong> from civic hazards are young breadwinners. The current model waits for the system to break, pays a fraction of the cost, and absorbs a massive economic loss.</p>
+            <!-- MACRO PROBLEM -->
+            <section class="section-padding container reveal">
+                <div class="text-center-wrap">
+                    <span class="meta-label">The Economics</span>
+                    <h2>The Cost of Ignoring the Problem.</h2>
+                    <p>This is not just a human tragedy; it’s a huge financial drain. Over <strong>40% of deaths</strong> from local hazards are young breadwinners. The system loses a lot of money overall while only paying out tiny amounts to families.</p>
+                </div>
+                <div class="data-grid">
+                    <div class="data-point">
+                        <span class="meta-label">The Government Fix</span>
+                        <span class="data-value">$9k</span>
+                        <p class="data-context">₹7.5 Lakh paid in compensation.</p>
                     </div>
-                    
-                    <div class="data-grid">
-                        <div class="data-point">
-                            <span class="meta-label">The Government Fix</span>
-                            <span class="data-value">$9k</span>
-                            <span class="data-context">₹7.5 Lakh paid in compensation after a fatal accident occurs.</span>
-                        </div>
-                        <div class="data-point">
-                            <span class="meta-label">True Economic Loss</span>
-                            <span class="data-value">$640k</span>
-                            <span class="data-context">₹4.5 Crore wiped out in lost human productivity per life.</span>
-                        </div>
-                        <div class="data-point">
-                            <span class="meta-label">The Macro Drain</span>
-                            <span class="data-value">3%</span>
-                            <span class="data-context">GDP lost annually to poor infrastructure and unseen road hazards.</span>
-                        </div>
+                    <div class="data-point">
+                        <span class="meta-label">Real Economic Loss</span>
+                        <span class="data-value">$640k</span>
+                        <p class="data-context">₹4.5 Crore lost human productivity per life.</p>
+                    </div>
+                    <div class="data-point">
+                        <span class="meta-label">Total Economic Drain</span>
+                        <span class="data-value">3%</span>
+                        <p class="data-context">GDP lost annually to poor infrastructure.</p>
                     </div>
                 </div>
             </section>
+            
+            <div class="container"><div class="divider" style="margin-top: 0;"></div></div>
 
-            <!-- The Insight[cite: 1] -->
-            <section class="container reveal section-padding" style="padding-top: 0;">
+            <!-- THE SIGNAL (SENSORS) -->
+            <section class="section-padding container reveal" style="padding-top: 0;">
                 <div class="grid-split">
                     <div class="img-wrap img-portrait">
-                        <img src="child.png" alt="Abstract earthy map texture">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" alt="Child sensor">
                     </div>
                     <div class="text-wrap">
-                        <span class="meta-label">The Strategy</span>
+                        <span class="meta-label">The Signal</span>
                         <h2>The best sensors<br>don't use batteries.</h2>
                         <p>Top-down municipal mapping fails because it relies on static surveys. But there is a demographic that walks these specific dirt paths, alleys, and kiln routes every single day. Children.</p>
                         <p>By treating migration, age, and language not as roadblocks, but as design variables, we transform marginalized youth into active, hyper-local data sensors.</p>
                     </div>
                 </div>
-                <div class="divider"></div>
+            </section>
+            
+            <div class="container"><div class="divider" style="margin-top: 0;"></div></div>
+
+            <!-- THE ARCHITECTURE (ELEGANT FLOW) -->
+            <section class="section-padding container reveal" style="padding-top: 0;">
+                <div class="text-center-wrap">
+                    <span class="meta-label">The Architecture</span>
+                    <h2>Survival disguised as science.</h2>
+                    <p>If we teach a traditional safety class in environments that don't reward traditional learning, we fail. So, we are trying to design a "Need-Based" survival curriculum disguised as a mapping game.</p>
+                    <span class="status-tag tag-ideation" style="margin-bottom: 0; margin-top: 0.5rem;">Tentative Plan — Subject to field constraints</span>
+                </div>
+                
+                <div class="arch-flow-wrapper">
+                    <div class="arch-flow-grid">
+                        
+                        <!-- Step 1 -->
+                        <div class="arch-item">
+                            <div class="arch-phase-num">01</div>
+                            <h3>Data Collection</h3>
+                            <p>Data collection through children.</p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="arch-item">
+                            <div class="arch-phase-num">02</div>
+                            <h3>The Formula</h3>
+                            <p>We process the analog data collected by the children into a core community scoring metric:</p>
+                            <div class="arch-equation">Hazard + Exposure = <span class="highlight">Critical Risk</span></div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="arch-item">
+                            <div class="arch-phase-num">03</div>
+                            <h3>Digital Synthesis</h3>
+                            <p>Ground teams synthesize this scoring data into a live Vulnerability Map, calculating exact community risk levels.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- VIEW: INSPIRATIONS -->
+        <article id="inspirations" class="view-section">
+            <section class="section-padding container reveal">
+                <div class="text-center-wrap">
+                    <span class="meta-label">Previous Work</span>
+                    <h2>Research Ledger.</h2>
+                    <p>Real-world examples and past projects guiding our structural logic.</p>
+                </div>
+                
+                <div class="research-ledger">
+                    <!-- Ledger Item 1 -->
+                    <div class="ledger-row">
+                        <div class="ledger-meta">
+                            <span class="status-tag tag-ideation" style="background: #E6ECFF; color: #111;">Operational Model</span>
+                            <h3>Mirakle Couriers</h3>
+                        </div>
+                        <div class="ledger-content">
+                            <h2>Dhruv Lakra</h2>
+                            <p>Dhruv Lakra founded a logistics business entirely staffed by deaf adults. He recognized that deaf individuals possess heightened visual awareness and spatial memory, perfect traits for navigating complex urban routes.</p>
+                            <p><strong>Our Takeaway:</strong> Instead of treating deafness as a disability, he built an operational model around it as a core strength. This mirrors our approach to the children in the kilns. We aren't treating their age or lack of formal education as a barrier; we are using their innate local knowledge and daily physical presence as the ultimate environmental sensors.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ledger Item 2 -->
+                    <div class="ledger-row">
+                        <div class="ledger-meta">
+                            <span class="status-tag tag-data" style="background: #E6F8ED; color: #111;">Data Collection</span>
+                            <h3>Predictive Outbreaks</h3>
+                        </div>
+                        <div class="ledger-content">
+                            <h2>Umar Saif</h2>
+                            <p>During the 2012 Dengue epidemic in Lahore, Dr. Umar Saif realized high-tech tracking was failing. He gave basic smartphones to local street sweepers who simply clicked photos at the start and end of their shifts. The backend system used digital image processing to map clean vs. dirty areas, predicting hospital outbreaks and dropping cases from 16,000 to nearly zero the next year.</p>
+                            <p><strong>Our Takeaway:</strong> This is the exact blueprint for our project. We will give low-fi, accessible tools (like simple cameras and tracking cards) to ground-level participants (the children) to feed a high-level digital Vulnerability Index.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ledger Item 3 -->
+                    <div class="ledger-row">
+                        <div class="ledger-meta">
+                            <span class="status-tag tag-execution" style="background: #FFCC00; color: #111;">Pedagogical Theory</span>
+                            <h3>Barefoot College</h3>
+                        </div>
+                        <div class="ledger-content">
+                            <h2>Tilonia</h2>
+                            <p>Bunker Roy’s Barefoot College in Tilonia trains rural grandmothers from across the globe to become fully qualified solar engineers in six months. Almost all of these women have zero formal literacy. The program bypasses traditional text-based education entirely, using only visual cues, colors, and practical application.</p>
+                            <p><strong>Our Takeaway:</strong> This proves that we do not need a traditional classroom. We can successfully teach the children how to identify, track, and map critical environmental variables purely through visual literacy and context-based learning.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </article>
 
@@ -262,31 +377,43 @@
         <article id="resources" class="view-section">
             <section class="section-padding container reveal">
                 <div class="text-center-wrap">
-                    <span class="meta-label">Methodologies</span>
-                    <h1>Core Frameworks.</h1>
-                    <p>The pedagogical and spatial frameworks guiding our field operations in the NCR region.</p>
+                    <span class="meta-label">Project Assets</span>
+                    <h2>Digital Locker.</h2>
+                    <p>Actionable toolkits, curriculum structures, and data processing frameworks required for the deployment.</p>
                 </div>
                 
-                <div class="resource-grid">
-                    <div class="resource-card">
-                        <span class="status-tag tag-data">Data Architecture</span>
-                        <h2>Geographic Info Systems</h2>
-                        <p>Understanding the spatial mapping foundations that allow us to translate analog string-maps into actionable digital vulnerability indexes.</p>
+                <div class="locker-grid">
+                    <!-- Toolkit 1 -->
+                    <div class="locker-card">
+                        <span class="status-tag tag-execution">In Development</span>
+                        <h3>Field Data Toolkit</h3>
+                        <p class="locker-desc">Tools designed to avoid problems with kiln owners. We will use simple visual tools and get the community involved instead of installing physical machines.</p>
+                        
+                        <details class="locker-details">
+                            <summary>View Details</summary>
+                            <div class="locker-expanded" style="padding-top: 1rem; margin-top: 1rem; border-top: none;">
+                                <a href="assets/example_document.pdf" target="_blank" class="resource-link-wrapper" title="Click to open document">
+                                    <img src="assets/petroleum jelly.png" alt="Petroleum Jelly Tool" class="resource-img-interactive">
+                                    <div class="resource-link-label">
+                                        &#8594; Click to open file
+                                    </div>
+                                </a>
+                            </div>
+                        </details>
                     </div>
-                    <div class="resource-card">
-                        <span class="status-tag tag-ideation">Theoretical Core</span>
-                        <h2>What is Mapping?</h2>
-                        <p>Redefining cartography. Mapping is not just geography; it is the documentation of human movement, exposure, and environmental reality.</p>
+                    
+                    <!-- Toolkit 2 -->
+                    <div class="locker-card">
+                        <span class="status-tag tag-ideation">Drafting Phase</span>
+                        <h3>Need-Based Curriculum</h3>
+                        <p class="locker-desc">The lesson plan to teach environmental safety to 8-14 year olds honestly, without tricking them into just playing a game.</p>
                     </div>
-                    <div class="resource-card">
-                        <span class="status-tag tag-execution">Field Operations</span>
-                        <h2>Need-Based Education</h2>
-                        <p>Education designed for survival. We bypass traditional rote learning to teach practical, immediate risk calculation disguised as play.</p>
-                    </div>
-                    <div class="resource-card">
-                        <span class="status-tag tag-dark">Algorithm Synthesis</span>
-                        <h2>The Vulnerability Index</h2>
-                        <p>The mathematical synthesis of our ground data. How we quantify hazard types against population exposure to rank community risks.</p>
+                    
+                    <!-- Toolkit 3 -->
+                    <div class="locker-card">
+                        <span class="status-tag tag-data">Pending Data</span>
+                        <h3>The Map Engine</h3>
+                        <p class="locker-desc">The computer process we use to turn the visual data from the kids into a clear "Vulnerability Map" that shows the real risks.</p>
                     </div>
                 </div>
             </section>
@@ -297,68 +424,63 @@
             <section class="section-padding container reveal">
                 <div class="text-center-wrap">
                     <span class="meta-label">The Ecosystem</span>
-                    <h1>Specialized expertise.</h1>
-                    <p>The cross-disciplinary cohort bridging environmental research, capital mechanics, and localized ground operations.</p>
+                    <h2>Project Roster.</h2>
+                    <p>The cross-disciplinary cohort bridging environmental research, capital mechanics, and localized operations.</p>
                 </div>
                 
-                <div class="team-list">
-                    <!-- Priya[cite: 1] -->
-                    <div class="team-row">
-                        <div class="team-photo">
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
                             <img src="priya.png" alt="Priya">
                         </div>
                         <div class="team-info">
                             <h3>Priya</h3>
-                            <span class="meta-label">Explorer | Environmental Lens</span>
-                            <p>Drives the environmental research, curriculum design, and operational toolsets.</p>
+                            <span class="meta-label">Environmental Lens</span>
+                            <p>Leads the environmental research and creates the map-making tools.</p>
                         </div>
                     </div>
-
-                    <!-- Vivek[cite: 1] -->
-                    <div class="team-row">
-                        <div class="team-photo">
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
                             <img src="vivek.png" alt="Vivek">
                         </div>
                         <div class="team-info">
                             <h3>Vivek</h3>
-                            <span class="meta-label">Lead Educator | Capital Lens</span>
-                            <p>Contextualizes the curriculum for ground realities, focusing on the underlying economic mechanics of the sites.</p>
+                            <span class="meta-label">Economic Strategy</span>
+                            <p>Makes sure the lessons fit the real-world challenges and money issues at the kilns.</p>
                         </div>
                     </div>
-
-                    <!-- Raman[cite: 1] -->
-                    <div class="team-row">
-                        <div class="team-photo">
-                            <img src="Raman.jpg" alt="Raman">
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="Raman.JPG" alt="Raman">
                         </div>
                         <div class="team-info">
                             <h3>Raman</h3>
-                            <span class="meta-label">Community Educator | Ground Operations</span>
-                            <p>Founder of LIFI. Anchors our ground strategy across 17 NCR kilns (Hindi-speaking, ages 8–14) and manages our network of community teachers.</p>
+                            <span class="meta-label">Ground Operations</span>
+                            <p>Anchors strategy across 17 NCR kilns and manages educators.</p>
                         </div>
                     </div>
-
-                    <!-- Diya[cite: 1] -->
-                    <div class="team-row">
-                        <div class="team-photo">
-                            <img src="diya.jpg" alt="Diya">
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <img src="diya.JPG" alt="Diya">
                         </div>
                         <div class="team-info">
                             <h3>Diya</h3>
-                            <span class="meta-label">Project Documentation</span>
-                            <p>Owns the visual and structural documentation, ensuring the project's data and narrative are transparent, legible, and sustainable long after completion[cite: 1].</p>
+                            <span class="meta-label">Documentation</span>
+                            <p>Owns the visual and structural architecture of project data.</p>
                         </div>
                     </div>
-
-                    <!-- Kip[cite: 1] -->
-                    <div class="team-row">
-                        <div class="team-photo">
+                    
+                    <div class="team-card">
+                        <div class="team-avatar">
                             <img src="kip.png" alt="Kip">
                         </div>
                         <div class="team-info">
                             <h3>Kip</h3>
                             <span class="meta-label">Program Guide</span>
-                            <p>Steers our overall program navigation, bringing essential energy and strategic warmth to the cohort.</p>
+                            <p>Steers program navigation, bringing energy and strategic warmth.</p>
                         </div>
                     </div>
                 </div>
@@ -368,64 +490,54 @@
         <!-- VIEW: FIELD LOG & HUB -->
         <article id="fieldlog" class="view-section">
             <section class="section-padding container reveal">
-                <div class="text-center-wrap" style="margin-bottom: 4rem;">
+                <div class="text-center-wrap" style="margin-bottom: 2rem;">
                     <span class="meta-label">Mission Control</span>
-                    <h1>Project Hub & Field Logs.</h1>
-                    <p>Live tracking of execution in the Sonipat district, upcoming meeting agendas, and digital data prototypes.</p>
+                    <h2>Project Logs & Syncs.</h2>
+                    <p>Chronological documentation of team discussions, agendas, and actionable next steps.</p>
                 </div>
                 
-                <!-- STRING MAPPING VISUALIZATION INTERFACE -->
-                <div class="agenda-block reveal" style="margin-bottom: 4rem; padding: 0;">
-                    <div style="padding: 2rem; border-bottom: 2px solid var(--border-heavy); background: #FFF;">
-                        <span class="status-tag tag-data">Data Prototype</span>
-                        <h3>String-Mapping: Digital Translation Canvas</h3>
-                        <p style="margin-bottom: 0;">Visualizing the analog thread-mapping and petroleum jelly cards collected from the 17 brick kilns. Hover over nodes to view simulated ground metrics.</p>
-                    </div>
-
-                <!-- MEETING AGENDAS -->
-                <h3 style="margin-top: 5rem; border-bottom: 2px solid var(--border-heavy); padding-bottom: 1rem;">Active Discussions & Next Steps</h3>
                 <div class="agenda-list reveal">
-                    
+                    <!-- Log 1 (Upcoming - TBD) -->
                     <div class="agenda-block">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                             <div>
-                                <span class="status-tag tag-execution">Execution Block</span>
-                                <h3>Next Meeting</h3>
-                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                                <span class="status-tag tag-blocker">Scheduling...</span>
+                                <h3>Next Sync: Finalizing Data Outcomes</h3>
+                                <p style="margin: 0; font-size: 0.95rem;">Cross-functional review of the 3 mapping layers.</p>
                             </div>
-                            <span class="meta-label">Upcoming Zoom</span>
+                            <span class="meta-label" style="text-align: right; margin-bottom: 0; color: var(--accent-red);">Yet to be<br>decided</span>
                         </div>
-                        
-                        <details>
-                            <summary>View Agenda, Outcomes & Tasks</summary>
+                        <details class="agenda-details">
+                            <summary>View Pending Agenda</summary>
+                            <div class="agenda-content">
+                                <p><strong>Status:</strong> Awaiting finalized dates from the cohort to review the exact deliverables required by the end of the 10-month pilot.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Log 2 (Transcript Sync) -->
+                    <div class="agenda-block">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <span class="status-tag tag-ideation">Completed Sync</span>
+                                <h3>Methodology Sync: Data Layers & Ethics</h3>
+                                <p style="margin: 0; font-size: 0.95rem;">Priya, Vivek, and Cohort Strategy Call.</p>
+                            </div>
+                            <span class="meta-label" style="text-align: right; margin-bottom: 0;">Recent</span>
+                        </div>
+                        <details class="agenda-details">
+                            <summary>View Notes & Outcomes</summary>
                             <div class="agenda-content">
                                 <ul>
-                                    <li><strong>Context:</strong> </li>
-                                    <li><strong>Agenda:</strong> </li>
-                                    <li><strong>Next Steps:</strong> </li>
+                                    <li><strong>The 3 Data Layers (Priya):</strong> Agreed to map pollution buffer zones (radius of impact), student transit routes (participatory mapping), and high-exposure time zones (schools/play areas).[cite: 4]</li>
+                                    <li><strong>The Capital Constraint (Vivek):</strong> Pivoted away from installing physical air monitors to prevent kiln owner pushback, which could jeopardize the livelihoods of the community. We will rely on "Level 2" visual/participatory data instead.[cite: 4]</li>
+                                    <li><strong>The Ethical Anchor:</strong> Pushed back against simply gamifying data collection without context. Agreed that children must explicitly know they are collecting environmental data to act as true collaborators, shaping the outcome themselves.[cite: 4]</li>
+                                    <li><strong>Timeline Confirmed:</strong> Field access window locked for October – February post-monsoons (~5 months / 10 structured sessions).[cite: 4]</li>
+                                    <li><strong>Macro Goal:</strong> Ultimately introduce this "Environmental Justice" curriculum to the broader LIFI network to scale nationwide.[cite: 4]</li>
                                 </ul>
                             </div>
                         </details>
                     </div>
-
-                    <div class="agenda-block">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <div>
-                                <span class="status-tag tag-ideation">Ideation Phase</span>
-                                <h3>Economic Context Integration</h3>
-                                <p style="margin: 0; font-size: 0.95rem;">Bridging the gap between hazard mapping and economic impact.</p>
-                            </div>
-                            <span class="meta-label">Completed Sync</span>
-                        </div>
-                        
-                        <details>
-                            <summary>View Notes</summary>
-                            <div class="agenda-content">
-                                <p><strong>Outcome:</strong> Ensuring the children understand the value of avoiding injury not just for health, but for long-term family stability..</p>
-                            </div>
-                        </details>
-                    </div>
-
                 </div>
             </section>
         </article>
@@ -436,7 +548,6 @@
             const navItems = document.querySelectorAll('.nav-item, .nav-trigger');
             const sections = document.querySelectorAll('.view-section');
 
-            // Navigation Logic
             const handleNavigation = (item) => {
                 const targetId = item.dataset.target || item.getAttribute('data-target');
                 document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
@@ -464,7 +575,6 @@
                 item.addEventListener('click', (e) => { e.preventDefault(); handleNavigation(item); });
             });
 
-            // Scroll Reveal Logic
             const initObserver = () => {
                 const observer = new IntersectionObserver((entries, obs) => {
                     entries.forEach(entry => {
