@@ -161,12 +161,13 @@
         
         /* --- TEAM: 3 THEN 2 GRID --- */
         .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
-        .team-card { width: calc(33.333% - 2rem); min-width: 250px; text-align: center; }
+        .team-card { width: calc(33.333% - 2rem); min-width: 250px; text-align: center; display: flex; flex-direction: column; }
         .team-avatar { width: 140px; height: 140px; margin: 0 auto 1.5rem; border-radius: 50%; overflow: hidden; background: var(--border-subtle); }
         .team-avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
         .team-card:hover .team-avatar img { transform: scale(1.05); }
+        .team-info { display: flex; flex-direction: column; flex-grow: 1; }
         .team-info h3 { font-size: 1.75rem; margin-bottom: 0.25rem; }
-        .team-info .meta-label { margin-bottom: 1rem; display: block; color: var(--natgeo-yellow); }
+        .team-info .meta-label { margin-bottom: 1rem; display: block; color: var(--natgeo-yellow); min-height: 3.5em; }
         .team-info p { margin-bottom: 0; font-size: 0.95rem; line-height: 1.6; }
 
         /* --- ACCORDION / AGENDA BLOCKS --- */
@@ -529,11 +530,11 @@
                             <summary>View Notes & Outcomes</summary>
                             <div class="agenda-content">
                                 <ul>
-                                    <li><strong>The 3 Data Layers (Priya):</strong> Agreed to map pollution buffer zones (radius of impact), student transit routes (participatory mapping), and high-exposure time zones (schools/play areas).[cite: 4]</li>
-                                    <li><strong>The Capital Constraint (Vivek):</strong> Pivoted away from installing physical air monitors to prevent kiln owner pushback, which could jeopardize the livelihoods of the community. We will rely on "Level 2" visual/participatory data instead.[cite: 4]</li>
-                                    <li><strong>The Ethical Anchor:</strong> Pushed back against simply gamifying data collection without context. Agreed that children must explicitly know they are collecting environmental data to act as true collaborators, shaping the outcome themselves.[cite: 4]</li>
-                                    <li><strong>Timeline Confirmed:</strong> Field access window locked for October – February post-monsoons (~5 months / 10 structured sessions).[cite: 4]</li>
-                                    <li><strong>Macro Goal:</strong> Ultimately introduce this "Environmental Justice" curriculum to the broader LIFI network to scale nationwide.[cite: 4]</li>
+                                    <li><strong>The 3 Data Layers (Priya):</strong> Agreed to map pollution buffer zones (radius of impact), student transit routes (participatory mapping), and high-exposure time zones (schools/play areas).</li>
+                                    <li><strong>The Capital Constraint (Vivek):</strong> Pivoted away from installing physical air monitors to prevent kiln owner pushback, which could jeopardize the livelihoods of the community. We will rely on "Level 2" visual/participatory data instead.</li>
+                                    <li><strong>The Ethical Anchor:</strong> Pushed back against simply gamifying data collection without context. Agreed that children must explicitly know they are collecting environmental data to act as true collaborators, shaping the outcome themselves.</li>
+                                    <li><strong>Timeline Confirmed:</strong> Field access window locked for October – February post-monsoons (~5 months / 10 structured sessions).</li>
+                                    <li><strong>Macro Goal:</strong> Ultimately introduce this "Environmental Justice" curriculum to the broader LIFI network to scale nationwide.</li>
                                 </ul>
                             </div>
                         </details>
